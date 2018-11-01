@@ -27,7 +27,7 @@ class Templator
     // Je créé une nouvelle méthode setVar
     // Cette méthode viens stocker dans mon objet sous la forme d'un tableau associatif, le param1 en clé et le param2 en valeur associée
     // Ainsi les données fournies "persisteront" dans mon objet
-    public function setVar($clé, $valeur)
+    public function setVar($key_name, $value)
     {
         // debug : qu'est-ce que j'ai comme valeur dans $param1 et $param2
         // $param1 contient une chaîne de caractère = 'clé'
@@ -38,13 +38,34 @@ class Templator
 
         // on cible la propriété $varList
         // $varList[] est un tableau associatif dont $param1 est la [clé] et $param2 = la valeur
-        $this->varList[$clé] = $valeur; 
+        // cette variable va stocker tous les tableaux dont on a besoin
+        $this->varList[$key_name] = $value; 
 
-        
-        
+    }
 
+    // Je créé une méthode getVar
+    // Celle-ci prend en paramètre lenom de la clé à chercher
+    // si la clé existe dans mon tableau de variable, je renvoi la valeur
+    public function getVar($key_name)
+    {
+        // si la clé existe dans mon tableau $this->varList, 
+        // autrement dit si la clé 'articles' passée en argument de l'appel de getVar() dans home.tpl.php existe dans le tableau 
+        if (isset($this->varList[$key_name])) {
 
+            // Alors je lui renvoi la valeur associée
+            return $this->varList[$key_name];
 
+        } else {
+
+            // Sinon je lui renvoi une chaîne vide
+            return '';
+        }
+    }
+
+    public function display($tpl_name)
+    {
+        // ici c'est comme si on avait copié/collé le code de home.tpl.php
+        require $this->path . '/'. $tpl_name . '.tpl.php';
     }
 
 

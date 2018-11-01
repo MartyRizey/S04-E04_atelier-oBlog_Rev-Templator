@@ -6,6 +6,7 @@
         https://getbootstrap.com/docs/4.1/layout/grid/#grid-options -->
         <main class="col-lg-9">
 
+          <!-- $this ou l'objet et connu ici, car dans la méthode getVar() de la classe Templator, on fait un require de cette page -->
           <?php foreach ($this->getVar('articles') as $currentArticle) : ?>
           <!-- Je dispose une card: https://getbootstrap.com/docs/4.1/components/card/ -->
           <article class="card">

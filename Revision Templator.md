@@ -18,3 +18,6 @@ Créer la classe PHP qui va permettre de gérer le système de _templates_ du si
 
 2°/ video -> 19:50:00
     4- Transmission des données au système de Templates
+
+3°/ video -> 46:00:00
+    5- Afficher la template de la home
