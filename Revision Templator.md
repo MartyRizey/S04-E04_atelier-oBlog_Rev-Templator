@@ -14,4 +14,7 @@ Créer la classe PHP qui va permettre de gérer le système de _templates_ du si
     - Quand on instancie un objet d'une classe avec le mot-clé 'new' on construit indirectement une méthode.
       Cette méthode est appelée par PHP, c'est une méthode magique. C'est la méthode "__construct()".
 
+    Récupérer le chemin dans l'argument qui génére le constructeur avec une méthode __construct.
 
+2°/ video -> 19:50:00
+    4- Transmission des données au système de Templates

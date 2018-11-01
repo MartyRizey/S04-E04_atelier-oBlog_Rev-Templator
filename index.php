@@ -16,9 +16,14 @@ require __DIR__.'/inc/data.php';
 $oTemplator = new Templator(__DIR__.'/inc/views');
 
 // 4- Transmission des données au système de Templates
+// setVar est une méthode de l'objet oTemplator qui à été instancié à partir de la classe Templator
+// la méthode prends 2 arguments qui devront être passés à la méthode via ces paramètres
 $oTemplator->setVar('articles', $articlesList);
 $oTemplator->setVar('categories', $categoriesList);
 $oTemplator->setVar('authors', $authorsList);
+
+// dump($oTemplator);
+// die();
 
 // 5- Afficher la template de la home
 $oTemplator->display('home');
