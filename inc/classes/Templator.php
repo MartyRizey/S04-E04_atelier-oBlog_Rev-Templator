@@ -27,7 +27,7 @@ class Templator
     // Je créé une nouvelle méthode setVar
     // Cette méthode viens stocker dans mon objet sous la forme d'un tableau associatif, le param1 en clé et le param2 en valeur associée
     // Ainsi les données fournies "persisteront" dans mon objet
-    public function setVar($param1, $param2)
+    public function setVar($clé, $valeur)
     {
         // debug : qu'est-ce que j'ai comme valeur dans $param1 et $param2
         // $param1 contient une chaîne de caractère = 'clé'
@@ -38,7 +38,7 @@ class Templator
 
         // on cible la propriété $varList
         // $varList[] est un tableau associatif dont $param1 est la [clé] et $param2 = la valeur
-        $this->varList[$param1] = $param2; 
+        $this->varList[$clé] = $valeur; 
 
         
         
