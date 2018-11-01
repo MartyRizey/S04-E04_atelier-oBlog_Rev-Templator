@@ -44,7 +44,7 @@ class Templator
     }
 
     // Je créé une méthode getVar
-    // Celle-ci prend en paramètre lenom de la clé à chercher
+    // Celle-ci prend en paramètre le nom de la clé à chercher
     // si la clé existe dans mon tableau de variable, je renvoi la valeur
     public function getVar($key_name)
     {
