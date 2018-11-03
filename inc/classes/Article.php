@@ -10,7 +10,7 @@ class Article {
     public function __construct($title='', $content='', $auhtor='', $date='', $category='') {
         $this->title = $title;
         $this->content = $content;
-        $this->auhtor = $auhtor;
+        $this->author = $auhtor;
         $this->date = $date;
         $this->category = $category;
     }

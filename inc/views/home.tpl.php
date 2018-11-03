@@ -30,6 +30,7 @@
 
         </main>
 
+        <!-- on appel la méthode de l'objet templator en passant en argument un chaine de caractères représentant le template -->
         <?php $this->include('aside') ?>
       </div><!-- /.row -->
 

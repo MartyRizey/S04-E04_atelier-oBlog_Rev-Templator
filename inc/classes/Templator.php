@@ -3,9 +3,10 @@
 class Templator
 {
     // nouvelle propriété dans ma classe, qui stockera à l'intérieur le chemin absolu de mon dossier de templates
+    // ici on peut utiliser private au lieu de public
     public $path;
     
-    // nouvelle propriété dans ma classe, qui stockera à l'intèrieur mes clés & valeurs fournies  
+    // nouvelle propriété dans ma classe, qui stockera à l'intèrieur mes clés & valeurs fournies . On peut aussi la mettre en private puisque cette propriété n'est appelée que dans la classe.
     // cela permet de faire persister une donnée en dehors de la méthode et dans toute la classe
     // le = array() ici ne sert .... à rien ! c'est pour le développeur qui lira le code comprendra de suite que c'est un tableau
     public $varList = array();
@@ -62,11 +63,24 @@ class Templator
         }
     }
 
-    public function display($tpl_name)
+    // Méthode qui affiche une page compléte (header + nav + contenu + footer)
+    // ici le paramètre de la méthode prend comme valeur l'argument de l'appel à la méthode, donc le nom du template à afficher
+    public function display($display_tpl)
     {
-        // ici c'est comme si on avait copié/collé le code de home.tpl.php
-        require $this->path . '/'. $tpl_name . '.tpl.php';
+        // ici on appel la méthode include sur l'objet($this) pour afficher les pages
+        $this->include('header');
+        $this->include($display_tpl);
+        $this->include('footer');
     }
+
+    // on peut rendre privée la méthode car elle n'est appelée que dans la classe Templator et pas en dehors dans un autre fichier via l'objet oTemplator->include()
+    // include() sera appelée indirectement par la méthode display() à l'intérieur de ma classe
+    private function include($tpl_name)
+    {   
+        // Méthode qui sert à inclure des fichiers de template
+        require $this->path . '/' . $tpl_name . '.tpl.php';
+    }
+    
 
 
 }

@@ -25,5 +25,5 @@ $oTemplator->setVar('authors', $authorsList);
 // dump($oTemplator);
 // die();
 
-// 5- Afficher la template de la home
+// 5- Afficher la template de la home (header, nav, main, footer)
 $oTemplator->display('home');
