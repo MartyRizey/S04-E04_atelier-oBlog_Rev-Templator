@@ -10,7 +10,7 @@ class Templator
     // cela permet de faire persister une donnée en dehors de la méthode et dans toute la classe
     // le = array() ici ne sert .... à rien ! c'est pour le développeur qui lira le code comprendra de suite que c'est un tableau
     public $varList = array();
-
+        
     // on récupére la valeur de l'argument de l'appelle de la fonction du fichier index.php dans le paramètre du constructeur
     // la méthode __construct est appelée dés l'utilisation du mot-clé 'new'
     public function __construct($path_directory)
@@ -22,7 +22,7 @@ class Templator
 
         // Je viens stocker la valeur de $path_directory dans 'path'
         $this->path = $path_directory;
-
+        
     }
 
     // Je créé une nouvelle méthode setVar
@@ -41,7 +41,6 @@ class Templator
         // $varList[] est un tableau associatif dont $param1 est la [clé] et $param2 = la valeur
         // cette variable va stocker tous les tableaux dont on a besoin
         $this->varList[$key_name] = $value; 
-
     }
 
     // Je créé une méthode getVar
@@ -81,6 +80,5 @@ class Templator
         require $this->path . '/' . $tpl_name . '.tpl.php';
     }
     
-
-
+    
 }
