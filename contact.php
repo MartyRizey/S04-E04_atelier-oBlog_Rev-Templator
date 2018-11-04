@@ -19,7 +19,13 @@ $oTemplator = new Templator(__DIR__.'/inc/views');
 // setVar est une méthode de l'objet oTemplator qui à été instancié à partir de la classe Templator
 // la méthode prends 2 arguments qui devront être passés à la méthode via ces paramètres
 // $oTemplator->setVar('articles', $articlesList);
+/**
+ *  Ici nous avons seulement besoin des données de $catégoriesList dans le fichier data.php
+ *  Car le template nav.tpl.php en a besoin via la méthode getVar('catégories') pour l'afficher avec le header. 
+ *  Nous n'affichons pas les articles ni les auteurs sur cette page.  
+ */
 $oTemplator->setVar('categories', $categoriesList);
+
 // $oTemplator->setVar('authors', $authorsList);
 
 // dump($oTemplator);

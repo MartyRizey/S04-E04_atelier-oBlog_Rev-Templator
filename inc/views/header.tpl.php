@@ -19,7 +19,7 @@
     <!-- Ma feuille de style pour mon blog -->
     <link rel="stylesheet" href="./css/blog.css">
 
-    <title>Hello, world!</title>
+    <title>oBlog - A la dérive</title>
 </head>
 
 <body>
